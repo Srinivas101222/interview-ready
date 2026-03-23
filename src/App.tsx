@@ -25,6 +25,8 @@ const App = () => (
           <Route path="/auth" element={<Auth />} />
           <Route path="/profile-setup" element={<ProtectedRoute><ProfileSetup /></ProtectedRoute>} />
           <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+          <Route path="/jobs" element={<ProtectedRoute><JobSearch /></ProtectedRoute>} />
+          <Route path="/applications" element={<ProtectedRoute><Applications /></ProtectedRoute>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
