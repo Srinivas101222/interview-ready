@@ -7,6 +7,8 @@ import Index from "./pages/Index.tsx";
 import Auth from "./pages/Auth.tsx";
 import Dashboard from "./pages/Dashboard.tsx";
 import ProfileSetup from "./pages/ProfileSetup.tsx";
+import JobSearch from "./pages/JobSearch.tsx";
+import Applications from "./pages/Applications.tsx";
 import ProtectedRoute from "./components/ProtectedRoute.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
@@ -23,6 +25,8 @@ const App = () => (
           <Route path="/auth" element={<Auth />} />
           <Route path="/profile-setup" element={<ProtectedRoute><ProfileSetup /></ProtectedRoute>} />
           <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+          <Route path="/jobs" element={<ProtectedRoute><JobSearch /></ProtectedRoute>} />
+          <Route path="/applications" element={<ProtectedRoute><Applications /></ProtectedRoute>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
