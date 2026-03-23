@@ -14,7 +14,45 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      profiles: {
+        Row: {
+          branch: Database["public"]["Enums"]["branch_type"] | null
+          created_at: string
+          education: string | null
+          full_name: string | null
+          id: string
+          location_preference: string | null
+          preferred_job_role: string | null
+          skills: string[] | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          branch?: Database["public"]["Enums"]["branch_type"] | null
+          created_at?: string
+          education?: string | null
+          full_name?: string | null
+          id?: string
+          location_preference?: string | null
+          preferred_job_role?: string | null
+          skills?: string[] | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          branch?: Database["public"]["Enums"]["branch_type"] | null
+          created_at?: string
+          education?: string | null
+          full_name?: string | null
+          id?: string
+          location_preference?: string | null
+          preferred_job_role?: string | null
+          skills?: string[] | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -23,7 +61,14 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      branch_type:
+        | "CSE"
+        | "EEE"
+        | "ECE"
+        | "Civil"
+        | "Mechanical"
+        | "IT"
+        | "Other"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +195,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      branch_type: ["CSE", "EEE", "ECE", "Civil", "Mechanical", "IT", "Other"],
+    },
   },
 } as const
