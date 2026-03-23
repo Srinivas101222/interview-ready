@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Eye, Upload, FileText, X, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 import JobCategorySelector from "@/components/dashboard/JobCategorySelector";
 import DifficultySelector from "@/components/dashboard/DifficultySelector";
 import QuestionPanel from "@/components/dashboard/QuestionPanel";
