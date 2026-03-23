@@ -49,7 +49,11 @@ const Dashboard = () => {
             </div>
             <span className="font-heading font-bold text-lg">HireLens</span>
           </div>
-          <Button variant="ghost" size="sm" onClick={() => navigate("/")}>
+          <Button variant="ghost" size="sm" onClick={async () => {
+            await supabase.auth.signOut();
+            toast.success("Logged out");
+            navigate("/");
+          }}>
             Log Out
           </Button>
         </div>
