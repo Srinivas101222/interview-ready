@@ -32,11 +32,11 @@ const Auth = () => {
           password,
           options: {
             data: { full_name: fullName },
-            emailRedirectTo: window.location.origin,
           },
         });
         if (error) throw error;
-        toast.success("Check your email to confirm your account!");
+        toast.success("Account created! Redirecting...");
+        navigate("/profile-setup");
       }
     } catch (error: any) {
       toast.error(error.message || "Authentication failed");
